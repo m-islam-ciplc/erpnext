@@ -1,0 +1,148 @@
+# Fixed Asset Categories (International Standard Business Structure)
+
+## 1. Land
+- Freehold Land
+- Leasehold Land
+
+## 2. Building & Civil Works
+- Office Building
+- Factory Building
+- Warehouse
+- Boundary Wall
+- Roads & Pavement
+- Drainage System
+
+## 3. Plant & Machinery
+- Production Machinery
+- Industrial Equipment
+- Generator
+- Compressor
+- Boiler
+- Transformer
+
+## 4. Computer & IT Equipment
+- Laptop
+- Desktop Computer
+- Workstation
+- Monitor
+- Printer
+- Scanner
+- UPS
+
+## 5. Network & Communication Equipment
+- Router
+- Switch
+- Firewall
+- Access Point
+- IP Phone
+- CCTV System
+- Attendance Device
+
+## 6. Server & Data Center Equipment
+- Physical Server
+- Storage Device
+- NAS/SAN
+- Backup Appliance
+- Server Rack
+
+## 7. Office Equipment
+- Photocopier
+- Projector
+- Air Conditioner
+- Refrigerator
+- Television
+- Conference System
+
+## 8. Furniture & Fixtures
+- Office Table
+- Chair
+- Cabinet
+- Workstation
+- Shelf
+- Partition
+
+## 9. Vehicles
+- Car
+- Pickup
+- Truck
+- Forklift
+- Motorcycle
+
+## 10. Electrical Equipment
+- HT Panel
+- LT Panel
+- Substation Equipment
+- Cable System
+- Lighting System
+
+## 11. Laboratory & Testing Equipment
+- Testing Machine
+- Measuring Instrument
+- Calibration Equipment
+
+## 12. Tools & Workshop Equipment
+- Power Tools
+- Welding Machine
+- Hand Tools
+- Workshop Bench
+
+## 13. Leasehold Improvements
+- Interior Decoration
+- False Ceiling
+- Renovation Work
+- Flooring
+- Partition Work
+
+## 14. Capital Work in Progress (CWIP)
+- Ongoing Construction
+- Under Installation Machinery
+- Incomplete Capital Project
+
+## 15. Intangible Assets
+- Software License
+- ERP System
+- Trademark
+- Patent
+- Domain & Website
+
+---
+
+# Recommended ERPNext Asset Category Structure
+
+## Main Categories
+- Land
+- Building & Civil Works
+- Plant & Machinery
+- Computer & IT Equipment
+- Network Equipment
+- Office Equipment
+- Furniture & Fixtures
+- Vehicles
+- Electrical Equipment
+- CWIP
+- Intangible Assets
+
+---
+
+# International Accounting Reference
+
+## Applicable Standards
+- IAS 16 – Property, Plant and Equipment
+- IAS 38 – Intangible Assets
+- IFRS Standards
+
+## Common Depreciation Methods
+- Straight Line Method (SLM)
+- Written Down Value (WDV)
+- Units of Production Method
+
+---
+
+# Best Practice Notes
+
+- Use broad categories for accounting.
+- Use subcategories/items for operational tracking.
+- Maintain unique asset codes.
+- Assign custodian, department, and location.
+- Separate CWIP from active assets.
+- Keep depreciation policy consistent.
