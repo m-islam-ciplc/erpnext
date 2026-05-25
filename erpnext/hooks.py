@@ -8,6 +8,7 @@ app_email = "hello@frappe.io"
 app_license = "GNU General Public License (v3)"
 source_link = "https://github.com/frappe/erpnext"
 app_logo_url = "/assets/erpnext/images/erpnext-logo.svg"
+# ASSETS_ONLY_MODE: default desk route; FULL_ERP: set to "/desk"
 app_home = "/desk"
 
 add_to_apps_screen = [
@@ -63,7 +64,8 @@ welcome_email = "erpnext.setup.utils.welcome_email"
 setup_wizard_requires = "assets/erpnext/js/setup_wizard.js"
 setup_wizard_stages = "erpnext.setup.setup_wizard.setup_wizard.get_setup_stages"
 
-after_install = "erpnext.setup.install.after_install"
+# ASSETS_ONLY_MODE: chains setup install + desk visibility; FULL_ERP: use erpnext.setup.install.after_install
+after_install = "erpnext.assets_only.install.run_after_install"
 
 boot_session = "erpnext.startup.boot.boot_session"
 notification_config = "erpnext.startup.notifications.get_notification_config"
@@ -679,6 +681,8 @@ additional_timeline_content = {"*": ["erpnext.telephony.doctype.call_log.call_lo
 extend_bootinfo = [
 	"erpnext.support.doctype.service_level_agreement.service_level_agreement.add_sla_doctypes",
 	"erpnext.startup.boot.bootinfo",
+	# ASSETS_ONLY_MODE
+	"erpnext.assets_only.boot.extend_bootinfo",
 ]
 
 

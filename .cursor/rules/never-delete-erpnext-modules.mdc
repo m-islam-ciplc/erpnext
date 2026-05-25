@@ -1,0 +1,25 @@
+---
+description: CRITICAL - Never delete ERPNext module code; asset-only = disable only
+alwaysApply: true
+---
+
+# ⛔ CRITICAL PROJECT RULE — NEVER DELETE CODE
+
+**This rule overrides convenience.** The user will use full ERPNext later.
+
+## Forbidden
+- Deleting files/folders under `erpnext/` modules (accounts, stock, buying, selling, hr, manufacturing, etc.)
+- Removing doctypes, workspaces, workspace_sidebars, or hooks entries **permanently**
+- "Cleaning up" unused modules by erasing source
+- Suggesting a stripped fork without upstream modules
+
+## Required instead
+- **Comment out** with `# ASSETS_ONLY_MODE` and `# FULL_ERP: restore by uncommenting`
+- **Config flags** (e.g. `ASSETS_ONLY_MODE = True`)
+- **Hide** via permissions, `is_hidden`, boot_session filters, new additive custom files
+- **JSON**: do not delete; use `is_hidden` or Python-driven visibility
+
+## Before any PR-sized change
+Ask: "Can full ERP be restored by toggling flags/comments?" If no, the approach is wrong.
+
+See also: `ASSETS_ONLY_MODE.md`, `.cursor/rules/fixed-assets-project.mdc`

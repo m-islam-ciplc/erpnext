@@ -1,0 +1,31 @@
+---
+description: Fixed-asset-only ERPNext customization on asset-dev; never delete core modules
+alwaysApply: true
+---
+
+# Fixed Assets Project (asset-dev)
+
+## Product scope
+- **ERPNext = group-wide fixed asset register** (all categories: land, buildings, plant, vehicles, IT, furniture, intangibles, CWIP—not IT-only).
+- **Procurement software** handles purchases; **Tally** handles accounting.
+- **Existing Asset** for on-books assets; future assets registered when received/capitalized (procurement ref fields), not via ERPNext Purchase Invoice.
+- **Custodian / Asset Movement** (Issue, Receipt, Transfer) for assignment where relevant (users, departments, locations)—all asset types.
+- **LDAP** → User sync; link/create **Employee** for custodian dropdowns.
+- Depreciation: schedules/reports in ERPNext; posting/export for **Tally** (do not assume full ERPNext GL is live).
+
+## Code policy (⛔ CRITICAL — never violate)
+- Work on branch **`asset-dev`** only for customization.
+- **NEVER DELETE** ERPNext module code, doctypes, workspaces, or upstream files for “asset-only” mode. **No exceptions.**
+- Also see `.cursor/rules/never-delete-erpnext-modules.mdc` (always applied).
+- **Disable via**: commented blocks, config flags (`ASSETS_ONLY_MODE`), hooks, permissions, `is_hidden`—tag with:
+  - `# ASSETS_ONLY_MODE` — disabled for asset-only deployment
+  - `# FULL_ERP: uncomment / restore flag to re-enable`
+- Prefer **new files** under `erpnext/` (custom app paths, reports, patches) over editing core unless necessary; when editing core, use comments/flags, not removal.
+- JSON cannot use `//`; use `is_hidden`, sidecar config, or Python hooks—**do not delete** workspace JSON files.
+
+## UI / verification
+- Verify menu paths in `workspace_sidebar/` and `workspace/` before telling the user where to click.
+- Check site state via `bench --site assets.localhost` when possible; do not ask the user to confirm what code/DB can answer.
+
+## Future
+- Design so **full ERP** can be turned back on by restoring flags/comments—no re-clone of ERPNext required.
